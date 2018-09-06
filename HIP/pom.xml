@@ -7,10 +7,35 @@
     <packaging>pom</packaging>
     <modules>
         <module>HIP-DAO</module>
-    <module>HIP-SERVER</module>
+        <module>HIP-SERVER</module>
         <module>HIP-RIM</module>
     </modules>
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
+    <repositories>
+        <repository>
+            <!-- Maven 自带的中央仓库使用的Id为central 如果其他的仓库声明也是用该Id
+            就会覆盖中央仓库的配置 --> 
+            <id>nexus-aliyun</id>
+            <name>Nexus aliyun</name>
+            <url>http://maven.aliyun.com/nexus/content/groups/public</url>
+            <layout>default</layout>
+            <releases>
+                <enabled>true</enabled>
+            </releases>
+            <snapshots>
+                <enabled>false</enabled>
+            </snapshots>
+        </repository>
+    </repositories>
+    <dependencies>
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>4.10</version>
+            <scope>test</scope>
+        </dependency>
+    </dependencies>
+
 </project>
