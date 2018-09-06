@@ -8,7 +8,8 @@
     <modules>
         <module>HIP-DAO</module>
     <module>HIP-SERVER</module>
-  </modules>
+        <module>HIP-RIM</module>
+    </modules>
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
