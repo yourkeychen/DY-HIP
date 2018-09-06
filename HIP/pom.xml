@@ -9,14 +9,15 @@
         <module>HIP-DAO</module>
         <module>HIP-SERVER</module>
         <module>HIP-RIM</module>
-    </modules>
+    <module>HIP-CLIENT-AMB</module>
+  </modules>
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
     <repositories>
         <repository>
-            <!-- Maven è‡ªå¸¦çš„ä¸­å¤®ä»“åº“ä½¿ç”¨çš„Idä¸ºcentral å¦‚æžœå…¶ä»–çš„ä»“åº“å£°æ˜Žä¹Ÿæ˜¯ç”¨è¯¥Id
-            å°±ä¼šè¦†ç›–ä¸­å¤®ä»“åº“çš„é…ç½® --> 
+            <!-- Maven ×Ô´øµÄÖÐÑë²Ö¿âÊ¹ÓÃµÄIdÎªcentral Èç¹ûÆäËûµÄ²Ö¿âÉùÃ÷Ò²ÊÇÓÃ¸ÃId
+            ¾Í»á¸²¸ÇÖÐÑë²Ö¿âµÄÅäÖÃ --> 
             <id>nexus-aliyun</id>
             <name>Nexus aliyun</name>
             <url>http://maven.aliyun.com/nexus/content/groups/public</url>
