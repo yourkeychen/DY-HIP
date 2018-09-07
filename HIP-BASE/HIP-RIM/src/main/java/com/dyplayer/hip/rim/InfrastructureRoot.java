@@ -8,17 +8,27 @@ package com.dyplayer.hip.rim;
 import java.util.Date;
 
 /**
+ * 所有RIM实体的父
  *
  * @author duyi
  */
 public class InfrastructureRoot {
 
+    /**
+     * 数据id
+     */
     private Long id;
-
+    /**
+     * 写入时间
+     */
     private Date writeTime;
-
+    /**
+     * 最后修改时间
+     */
     private Date lastUpdate;
-
+    /**
+     * 是否有效
+     */
     private Boolean valid;
 
     public Long getId() {

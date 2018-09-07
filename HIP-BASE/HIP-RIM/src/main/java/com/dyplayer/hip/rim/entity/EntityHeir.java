@@ -6,11 +6,14 @@
 package com.dyplayer.hip.rim.entity;
 
 import com.dyplayer.hip.rim.InfrastructureRoot;
+import com.dyplayer.hip.rim.type.II;
 
 /**
  *
  * @author duyi
  */
 public class EntityHeir extends InfrastructureRoot{
+    
+    private II bId;
     
 }

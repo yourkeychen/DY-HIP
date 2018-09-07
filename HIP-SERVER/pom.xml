@@ -2,22 +2,17 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <groupId>com.dyplayer</groupId>
-    <artifactId>DY-HIP</artifactId>
+    <artifactId>HIP-SERVER</artifactId>
     <version>1.0-SNAPSHOT</version>
     <packaging>pom</packaging>
     <modules>
-        <module>HIP-DAO</module>
-        <module>HIP-SERVER</module>
-        <module>HIP-RIM</module>
-    <module>HIP-CLIENT-AMB</module>
-  </modules>
+        <module>CLINIC-SERVER</module>
+    </modules>
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
     <repositories>
         <repository>
-            <!-- Maven 自带的中央仓库使用的Id为central 如果其他的仓库声明也是用该Id
-            就会覆盖中央仓库的配置 --> 
             <id>nexus-aliyun</id>
             <name>Nexus aliyun</name>
             <url>http://maven.aliyun.com/nexus/content/groups/public</url>
