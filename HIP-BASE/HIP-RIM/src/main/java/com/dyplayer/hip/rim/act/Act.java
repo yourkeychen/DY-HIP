@@ -26,11 +26,11 @@ public class Act {
     /**
      * 是否是逆操作（退费、退药）
      */
-    private Boolean actionNegationind;
+    private String actionNegationind;
     /**
      * 是否可逆
      */
-    private Boolean negationind;
+    private String negationind;
     /**
      * 来源说明
      */
@@ -82,7 +82,7 @@ public class Act {
     /**
      * 是否中断
      */
-    private Boolean interruptiblelnd;
+    private String interruptiblelnd;
     /**
      * 级别编码
      */
@@ -90,7 +90,7 @@ public class Act {
     /**
      * 是否独立
      */
-    private Boolean independentlnd;
+    private String independentlnd;
     /**
      * 不确定码
      */
@@ -116,19 +116,19 @@ public class Act {
         this.code = code;
     }
 
-    public Boolean getActionNegationind() {
+    public String getActionNegationind() {
         return actionNegationind;
     }
 
-    public void setActionNegationind(Boolean actionNegationind) {
+    public void setActionNegationind(String actionNegationind) {
         this.actionNegationind = actionNegationind;
     }
 
-    public Boolean getNegationind() {
+    public String getNegationind() {
         return negationind;
     }
 
-    public void setNegationind(Boolean negationind) {
+    public void setNegationind(String negationind) {
         this.negationind = negationind;
     }
 
@@ -228,11 +228,11 @@ public class Act {
         this.repeatNumber = repeatNumber;
     }
 
-    public Boolean getInterruptiblelnd() {
+    public String getInterruptiblelnd() {
         return interruptiblelnd;
     }
 
-    public void setInterruptiblelnd(Boolean interruptiblelnd) {
+    public void setInterruptiblelnd(String interruptiblelnd) {
         this.interruptiblelnd = interruptiblelnd;
     }
 
@@ -244,11 +244,11 @@ public class Act {
         this.levelCode = levelCode;
     }
 
-    public Boolean getIndependentlnd() {
+    public String getIndependentlnd() {
         return independentlnd;
     }
 
-    public void setIndependentlnd(Boolean independentlnd) {
+    public void setIndependentlnd(String independentlnd) {
         this.independentlnd = independentlnd;
     }
 
@@ -267,5 +267,6 @@ public class Act {
     public void setReasonCode(String reasonCode) {
         this.reasonCode = reasonCode;
     }
+
     
 }

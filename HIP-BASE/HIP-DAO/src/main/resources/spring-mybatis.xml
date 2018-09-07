@@ -17,7 +17,7 @@
         http://www.springframework.org/schema/tx/spring-tx-4.0.xsd">
     <!--<import resource="classpath:dozer-spring.xml"/>-->
     <!-- 自动扫描 -->
-    <context:component-scan base-package="com.dyplayer.hip.dao" />
+    <!--<context:component-scan base-package="com.dyplayer.hip.dao" />-->
     <!--    <context:component-scan base-package="com.bjgoodwill.hip.cache" /> -->
     <!-- 引入数据库连接配置文件 -->
     <bean id="propertyConfigurer"
@@ -66,7 +66,7 @@
         <!-- 配置mybatis的日志记录 --> 
         <property name="configLocation" value="classpath:mybatis-config.xml"></property> 
         <!-- 自动扫描mapping.xml文件 -->
-        <property name="mapperLocations" value="classpath:com/bjgoodwill/hip/mapping/**/*.xml"></property>
+        <property name="mapperLocations" value="classpath:com/dyplayer/hip/map/**/*.xml"></property>
         <property name="plugins">
             <array>
                 <bean class="com.github.pagehelper.PageHelper">
@@ -82,7 +82,7 @@
 
     <!-- DAO接口所在包名，Spring会自动查找其下的类 -->
     <bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
-        <property name="basePackage" value="com.bjgoodwill.hip.dao" />
+        <property name="basePackage" value="com.dyplayer.hip.dao.ets" />
         <property name="sqlSessionFactoryBeanName" value="sqlSessionFactory"></property>
     </bean>
     

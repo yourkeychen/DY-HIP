@@ -11,17 +11,17 @@ public class DictElement extends CD {
 
     private String elementRemark;
 
-    private String relationElementCode;
+    private String relationElement;
 
     private String inputPy;
 
     private String mnemonicCode;
 
-    private Short isDefault;
+    private String isDefault;
 
     private String elementNo;
 
-    private CD dict;
+    private Long dictId;
 
     public String getElementName() {
         return elementName;
@@ -39,14 +39,14 @@ public class DictElement extends CD {
         this.elementRemark = elementRemark;
     }
 
-    public String getRelationElementCode() {
-        return relationElementCode;
+    public String getRelationElement() {
+        return relationElement;
     }
 
-    public void setRelationElementCode(String relationElementCode) {
-        this.relationElementCode = relationElementCode;
+    public void setRelationElement(String relationElement) {
+        this.relationElement = relationElement;
     }
-
+    
     public String getInputPy() {
         return inputPy;
     }
@@ -63,14 +63,14 @@ public class DictElement extends CD {
         this.mnemonicCode = mnemonicCode;
     }
 
-    public Short getIsDefault() {
+    public String getIsDefault() {
         return isDefault;
     }
 
-    public void setIsDefault(Short isDefault) {
+    public void setIsDefault(String isDefault) {
         this.isDefault = isDefault;
     }
-
+    
     public String getElementNo() {
         return elementNo;
     }
@@ -79,12 +79,12 @@ public class DictElement extends CD {
         this.elementNo = elementNo;
     }
 
-    public CD getDict() {
-        return dict;
+    public Long getDictId() {
+        return dictId;
     }
 
-    public void setDict(CD dict) {
-        this.dict = dict;
+    public void setDictId(Long dictId) {
+        this.dictId = dictId;
     }
 
 }

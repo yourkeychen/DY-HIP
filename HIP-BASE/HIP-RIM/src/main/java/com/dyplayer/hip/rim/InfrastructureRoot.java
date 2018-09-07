@@ -29,7 +29,7 @@ public class InfrastructureRoot {
     /**
      * 是否有效
      */
-    private Boolean valid;
+    private String valid;
 
     public Long getId() {
         return id;
@@ -55,11 +55,11 @@ public class InfrastructureRoot {
         this.lastUpdate = lastUpdate;
     }
 
-    public Boolean getValid() {
+    public String getValid() {
         return valid;
     }
 
-    public void setValid(Boolean valid) {
+    public void setValid(String valid) {
         this.valid = valid;
     }
 

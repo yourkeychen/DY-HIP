@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.dyplayer.hip.dao.ets.DictDao" >
+    <resultMap id="BaseResultMap" type="com.dyplayer.hip.rim.type.ets.Dict" >
+        <id column="ID" property="id" jdbcType="DECIMAL" />
+        <result column="CODE" property="code" jdbcType="VARCHAR" />
+        <result column="DICT_TYPE" property="dictType" jdbcType="VARCHAR" />
+        <result column="DICT_NAME" property="dictName" jdbcType="VARCHAR" />
+        <result column="DICT_REMARK" property="dictRemark" jdbcType="VARCHAR" />
+        <result column="DICT_VERSION" property="dictVersion" jdbcType="VARCHAR" />
+        <result column="RELATION_DICT" property="relationDict" jdbcType="VARCHAR" />
+    </resultMap>
+    <sql id="Base_Column_List" >
+        ID, CODE, DICT_TYPE, DICT_NAME, DICT_REMARK, DICT_VERSION, RELATION_DICT
+    </sql>
+    <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Long" >
+        select 
+        <include refid="Base_Column_List" />
+        from DICT
+        where ID = #{id,jdbcType=DECIMAL}
+    </select>
+    <delete id="deleteByPrimaryKey" parameterType="java.lang.Long" >
+        delete from DICT
+        where ID = #{id,jdbcType=DECIMAL}
+    </delete>
+    <insert id="insert" parameterType="com.dyplayer.hip.rim.type.ets.Dict" >
+        <selectKey resultType="java.lang.Long" order="BEFORE" keyProperty="id">  
+            SELECT SEQ_DICT.nextval AS id FROM DUAL
+        </selectKey>
+        insert into DICT (ID, CODE, DICT_TYPE, 
+        DICT_NAME, DICT_REMARK, DICT_VERSION, 
+        RELATION_DICT)
+        values (#{id,jdbcType=DECIMAL}, #{code,jdbcType=VARCHAR}, #{dictType,jdbcType=VARCHAR}, 
+        #{dictName,jdbcType=VARCHAR}, #{dictRemark,jdbcType=VARCHAR}, #{dictVersion,jdbcType=VARCHAR}, 
+        #{relationDict,jdbcType=VARCHAR})
+    </insert>
+    <insert id="insertSelective" parameterType="com.dyplayer.hip.rim.type.ets.Dict" >
+        <selectKey resultType="java.lang.Long" order="BEFORE" keyProperty="id">  
+            SELECT SEQ_DICT.nextval AS id FROM DUAL
+        </selectKey>
+        insert into DICT
+        <trim prefix="(" suffix=")" suffixOverrides="," >
+            <if test="id != null" >
+                ID,
+            </if>
+            <if test="code != null" >
+                CODE,
+            </if>
+            <if test="dictType != null" >
+                DICT_TYPE,
+            </if>
+            <if test="dictName != null" >
+                DICT_NAME,
+            </if>
+            <if test="dictRemark != null" >
+                DICT_REMARK,
+            </if>
+            <if test="dictVersion != null" >
+                DICT_VERSION,
+            </if>
+            <if test="relationDict != null" >
+                RELATION_DICT,
+            </if>
+        </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides="," >
+            <if test="id != null" >
+                #{id,jdbcType=DECIMAL},
+            </if>
+            <if test="code != null" >
+                #{code,jdbcType=VARCHAR},
+            </if>
+            <if test="dictType != null" >
+                #{dictType,jdbcType=VARCHAR},
+            </if>
+            <if test="dictName != null" >
+                #{dictName,jdbcType=VARCHAR},
+            </if>
+            <if test="dictRemark != null" >
+                #{dictRemark,jdbcType=VARCHAR},
+            </if>
+            <if test="dictVersion != null" >
+                #{dictVersion,jdbcType=VARCHAR},
+            </if>
+            <if test="relationDict != null" >
+                #{relationDict,jdbcType=VARCHAR},
+            </if>
+        </trim>
+    </insert>
+    <update id="updateByPrimaryKeySelective" parameterType="com.dyplayer.hip.rim.type.ets.Dict" >
+        update DICT
+        <set >
+            <if test="code != null" >
+                CODE = #{code,jdbcType=VARCHAR},
+            </if>
+            <if test="dictType != null" >
+                DICT_TYPE = #{dictType,jdbcType=VARCHAR},
+            </if>
+            <if test="dictName != null" >
+                DICT_NAME = #{dictName,jdbcType=VARCHAR},
+            </if>
+            <if test="dictRemark != null" >
+                DICT_REMARK = #{dictRemark,jdbcType=VARCHAR},
+            </if>
+            <if test="dictVersion != null" >
+                DICT_VERSION = #{dictVersion,jdbcType=VARCHAR},
+            </if>
+            <if test="relationDict != null" >
+                RELATION_DICT = #{relationDict,jdbcType=VARCHAR},
+            </if>
+        </set>
+        where ID = #{id,jdbcType=DECIMAL}
+    </update>
+    <update id="updateByPrimaryKey" parameterType="com.dyplayer.hip.rim.type.ets.Dict" >
+        update DICT
+        set CODE = #{code,jdbcType=VARCHAR},
+        DICT_TYPE = #{dictType,jdbcType=VARCHAR},
+        DICT_NAME = #{dictName,jdbcType=VARCHAR},
+        DICT_REMARK = #{dictRemark,jdbcType=VARCHAR},
+        DICT_VERSION = #{dictVersion,jdbcType=VARCHAR},
+        RELATION_DICT = #{relationDict,jdbcType=VARCHAR}
+        where ID = #{id,jdbcType=DECIMAL}
+    </update>
+</mapper>

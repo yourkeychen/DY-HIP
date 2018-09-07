@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.dyplayer.hip.dao.ets.DictElementDao" >
+    <resultMap id="BaseResultMap" type="com.dyplayer.hip.rim.type.ets.DictElement" >
+        <id column="ID" property="id" jdbcType="DECIMAL" />
+        <result column="CODE" property="code" jdbcType="VARCHAR" />
+        <result column="ELEMENT_NAME" property="elementName" jdbcType="VARCHAR" />
+        <result column="ELEMENT_REMARK" property="elementRemark" jdbcType="VARCHAR" />
+        <result column="RELATION_ELEMENT" property="relationElement" jdbcType="VARCHAR" />
+        <result column="INPUT_PY" property="inputPy" jdbcType="VARCHAR" />
+        <result column="MNEMONIC_CODE" property="mnemonicCode" jdbcType="VARCHAR" />
+        <result column="IS_DEFAULT" property="isDefault" jdbcType="CHAR" />
+        <result column="ELEMENT_NO" property="elementNo" jdbcType="VARCHAR" />
+        <result column="DICT_ID" property="dictId" jdbcType="DECIMAL" />
+    </resultMap>
+    <sql id="Base_Column_List" >
+        ID, CODE, ELEMENT_NAME, ELEMENT_REMARK, RELATION_ELEMENT, INPUT_PY, MNEMONIC_CODE, 
+        IS_DEFAULT, ELEMENT_NO, DICT_ID
+    </sql>
+    <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Long" >
+        select 
+        <include refid="Base_Column_List" />
+        from DICT_ELEMENT
+        where ID = #{id,jdbcType=DECIMAL}
+    </select>
+    <delete id="deleteByPrimaryKey" parameterType="java.lang.Long" >
+        delete from DICT_ELEMENT
+        where ID = #{id,jdbcType=DECIMAL}
+    </delete>
+    <insert id="insert" parameterType="com.dyplayer.hip.rim.type.ets.DictElement" >
+        <selectKey resultType="java.lang.Long" order="BEFORE" keyProperty="id">  
+            SELECT SEQ_DICT_ELEMENT.nextval AS id FROM DUAL
+        </selectKey>
+        insert into DICT_ELEMENT (ID, CODE, ELEMENT_NAME, 
+        ELEMENT_REMARK, RELATION_ELEMENT, INPUT_PY, 
+        MNEMONIC_CODE, IS_DEFAULT, ELEMENT_NO, 
+        DICT_ID)
+        values (#{id,jdbcType=DECIMAL}, #{code,jdbcType=VARCHAR}, #{elementName,jdbcType=VARCHAR}, 
+        #{elementRemark,jdbcType=VARCHAR}, #{relationElement,jdbcType=VARCHAR}, #{inputPy,jdbcType=VARCHAR}, 
+        #{mnemonicCode,jdbcType=VARCHAR}, #{isDefault,jdbcType=CHAR}, #{elementNo,jdbcType=VARCHAR}, 
+        #{dictId,jdbcType=DECIMAL})
+    </insert>
+    <insert id="insertSelective" parameterType="com.dyplayer.hip.rim.type.ets.DictElement" >
+        <selectKey resultType="java.lang.Long" order="BEFORE" keyProperty="id">  
+            SELECT SEQ_DICT_ELEMENT.nextval AS id FROM DUAL
+        </selectKey>
+        insert into DICT_ELEMENT
+        <trim prefix="(" suffix=")" suffixOverrides="," >
+            <if test="id != null" >
+                ID,
+            </if>
+            <if test="code != null" >
+                CODE,
+            </if>
+            <if test="elementName != null" >
+                ELEMENT_NAME,
+            </if>
+            <if test="elementRemark != null" >
+                ELEMENT_REMARK,
+            </if>
+            <if test="relationElement != null" >
+                RELATION_ELEMENT,
+            </if>
+            <if test="inputPy != null" >
+                INPUT_PY,
+            </if>
+            <if test="mnemonicCode != null" >
+                MNEMONIC_CODE,
+            </if>
+            <if test="isDefault != null" >
+                IS_DEFAULT,
+            </if>
+            <if test="elementNo != null" >
+                ELEMENT_NO,
+            </if>
+            <if test="dictId != null" >
+                DICT_ID,
+            </if>
+        </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides="," >
+            <if test="id != null" >
+                #{id,jdbcType=DECIMAL},
+            </if>
+            <if test="code != null" >
+                #{code,jdbcType=VARCHAR},
+            </if>
+            <if test="elementName != null" >
+                #{elementName,jdbcType=VARCHAR},
+            </if>
+            <if test="elementRemark != null" >
+                #{elementRemark,jdbcType=VARCHAR},
+            </if>
+            <if test="relationElement != null" >
+                #{relationElement,jdbcType=VARCHAR},
+            </if>
+            <if test="inputPy != null" >
+                #{inputPy,jdbcType=VARCHAR},
+            </if>
+            <if test="mnemonicCode != null" >
+                #{mnemonicCode,jdbcType=VARCHAR},
+            </if>
+            <if test="isDefault != null" >
+                #{isDefault,jdbcType=CHAR},
+            </if>
+            <if test="elementNo != null" >
+                #{elementNo,jdbcType=VARCHAR},
+            </if>
+            <if test="dictId != null" >
+                #{dictId,jdbcType=DECIMAL},
+            </if>
+        </trim>
+    </insert>
+    <update id="updateByPrimaryKeySelective" parameterType="com.dyplayer.hip.rim.type.ets.DictElement" >
+        update DICT_ELEMENT
+        <set >
+            <if test="code != null" >
+                CODE = #{code,jdbcType=VARCHAR},
+            </if>
+            <if test="elementName != null" >
+                ELEMENT_NAME = #{elementName,jdbcType=VARCHAR},
+            </if>
+            <if test="elementRemark != null" >
+                ELEMENT_REMARK = #{elementRemark,jdbcType=VARCHAR},
+            </if>
+            <if test="relationElement != null" >
+                RELATION_ELEMENT = #{relationElement,jdbcType=VARCHAR},
+            </if>
+            <if test="inputPy != null" >
+                INPUT_PY = #{inputPy,jdbcType=VARCHAR},
+            </if>
+            <if test="mnemonicCode != null" >
+                MNEMONIC_CODE = #{mnemonicCode,jdbcType=VARCHAR},
+            </if>
+            <if test="isDefault != null" >
+                IS_DEFAULT = #{isDefault,jdbcType=CHAR},
+            </if>
+            <if test="elementNo != null" >
+                ELEMENT_NO = #{elementNo,jdbcType=VARCHAR},
+            </if>
+            <if test="dictId != null" >
+                DICT_ID = #{dictId,jdbcType=DECIMAL},
+            </if>
+        </set>
+        where ID = #{id,jdbcType=DECIMAL}
+    </update>
+    <update id="updateByPrimaryKey" parameterType="com.dyplayer.hip.rim.type.ets.DictElement" >
+        update DICT_ELEMENT
+        set CODE = #{code,jdbcType=VARCHAR},
+        ELEMENT_NAME = #{elementName,jdbcType=VARCHAR},
+        ELEMENT_REMARK = #{elementRemark,jdbcType=VARCHAR},
+        RELATION_ELEMENT = #{relationElement,jdbcType=VARCHAR},
+        INPUT_PY = #{inputPy,jdbcType=VARCHAR},
+        MNEMONIC_CODE = #{mnemonicCode,jdbcType=VARCHAR},
+        IS_DEFAULT = #{isDefault,jdbcType=CHAR},
+        ELEMENT_NO = #{elementNo,jdbcType=VARCHAR},
+        DICT_ID = #{dictId,jdbcType=DECIMAL}
+        where ID = #{id,jdbcType=DECIMAL}
+    </update>
+</mapper>

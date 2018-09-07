@@ -13,9 +13,9 @@ public class Dict extends CD {
 
     private String dictRemark;
 
-    private String version;
+    private String dictVersion;
 
-    private String relationDictCode;
+    private String relationDict;
 
     public String getDictType() {
         return dictType;
@@ -41,20 +41,20 @@ public class Dict extends CD {
         this.dictRemark = dictRemark;
     }
 
-    public String getVersion() {
-        return version;
+    public String getDictVersion() {
+        return dictVersion;
     }
 
-    public void setVersion(String version) {
-        this.version = version;
+    public void setDictVersion(String dictVersion) {
+        this.dictVersion = dictVersion;
     }
 
-    public String getRelationDictCode() {
-        return relationDictCode;
+    public String getRelationDict() {
+        return relationDict;
     }
 
-    public void setRelationDictCode(String relationDictCode) {
-        this.relationDictCode = relationDictCode;
+    public void setRelationDict(String relationDict) {
+        this.relationDict = relationDict;
     }
 
 }

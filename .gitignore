@@ -5,3 +5,6 @@
 /HIP-SERVER/HIP-DAO/target/
 /HIP-SERVER/HIP-RIM/target/
 /HIP-BASE/HIP-RIM/target/
+/mybatis-generator/build/
+/mybatis-generator/.nb-gradle/
+/HIP-BASE/HIP-DAO/nbproject/
