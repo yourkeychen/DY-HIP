@@ -2,8 +2,7 @@ package com.dyplayer.hip.dao.ets;
 
 import com.dyplayer.hip.rim.type.ets.DictElement;
 
-public interface DictElementDao {
-
+public interface DictElementMapper {
     int deleteByPrimaryKey(Long id);
 
     int insert(DictElement record);

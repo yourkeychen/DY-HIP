@@ -44,6 +44,14 @@ public class InfrastructureRoot {
         this.id = id;
     }
 
+    public String getbId() {
+        return bId;
+    }
+
+    public void setbId(String bId) {
+        this.bId = bId;
+    }
+
     public Date getWriteTime() {
         return writeTime;
     }

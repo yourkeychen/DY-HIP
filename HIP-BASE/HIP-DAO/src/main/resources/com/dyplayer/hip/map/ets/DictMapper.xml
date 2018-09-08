@@ -1,17 +1,21 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
-<mapper namespace="com.dyplayer.hip.dao.ets.DictDao" >
+<mapper namespace="com.dyplayer.hip.dao.ets.DictMapper" >
     <resultMap id="BaseResultMap" type="com.dyplayer.hip.rim.type.ets.Dict" >
         <id column="ID" property="id" jdbcType="DECIMAL" />
-        <result column="CODE" property="code" jdbcType="VARCHAR" />
+        <result column="BID" property="bid" jdbcType="VARCHAR" />
         <result column="DICT_TYPE" property="dictType" jdbcType="VARCHAR" />
         <result column="DICT_NAME" property="dictName" jdbcType="VARCHAR" />
         <result column="DICT_REMARK" property="dictRemark" jdbcType="VARCHAR" />
         <result column="DICT_VERSION" property="dictVersion" jdbcType="VARCHAR" />
         <result column="RELATION_DICT" property="relationDict" jdbcType="VARCHAR" />
+        <result column="WRITE_TIME" property="writeTime" jdbcType="TIMESTAMP" />
+        <result column="LAST_UPDATE" property="lastUpdate" jdbcType="TIMESTAMP" />
+        <result column="VALID" property="valid" jdbcType="CHAR" />
     </resultMap>
     <sql id="Base_Column_List" >
-        ID, CODE, DICT_TYPE, DICT_NAME, DICT_REMARK, DICT_VERSION, RELATION_DICT
+        ID, BID, DICT_TYPE, DICT_NAME, DICT_REMARK, DICT_VERSION, RELATION_DICT, WRITE_TIME, 
+        LAST_UPDATE, VALID
     </sql>
     <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Long" >
         select 
@@ -25,26 +29,28 @@
     </delete>
     <insert id="insert" parameterType="com.dyplayer.hip.rim.type.ets.Dict" >
         <selectKey resultType="java.lang.Long" order="BEFORE" keyProperty="id">  
-            SELECT SEQ_DICT.nextval AS id FROM DUAL
+            SELECT SEQ_DICT_ELEMENT.nextval AS id FROM DUAL
         </selectKey>
-        insert into DICT (ID, CODE, DICT_TYPE, 
+        insert into DICT (ID, BID, DICT_TYPE, 
         DICT_NAME, DICT_REMARK, DICT_VERSION, 
-        RELATION_DICT)
-        values (#{id,jdbcType=DECIMAL}, #{code,jdbcType=VARCHAR}, #{dictType,jdbcType=VARCHAR}, 
+        RELATION_DICT, WRITE_TIME, LAST_UPDATE, 
+        VALID)
+        values (#{id,jdbcType=DECIMAL}, #{bid,jdbcType=VARCHAR}, #{dictType,jdbcType=VARCHAR}, 
         #{dictName,jdbcType=VARCHAR}, #{dictRemark,jdbcType=VARCHAR}, #{dictVersion,jdbcType=VARCHAR}, 
-        #{relationDict,jdbcType=VARCHAR})
+        #{relationDict,jdbcType=VARCHAR}, #{writeTime,jdbcType=TIMESTAMP}, #{lastUpdate,jdbcType=TIMESTAMP}, 
+        #{valid,jdbcType=CHAR})
     </insert>
     <insert id="insertSelective" parameterType="com.dyplayer.hip.rim.type.ets.Dict" >
         <selectKey resultType="java.lang.Long" order="BEFORE" keyProperty="id">  
-            SELECT SEQ_DICT.nextval AS id FROM DUAL
+            SELECT SEQ_DICT_ELEMENT.nextval AS id FROM DUAL
         </selectKey>
         insert into DICT
         <trim prefix="(" suffix=")" suffixOverrides="," >
             <if test="id != null" >
                 ID,
             </if>
-            <if test="code != null" >
-                CODE,
+            <if test="bid != null" >
+                BID,
             </if>
             <if test="dictType != null" >
                 DICT_TYPE,
@@ -61,13 +67,22 @@
             <if test="relationDict != null" >
                 RELATION_DICT,
             </if>
+            <if test="writeTime != null" >
+                WRITE_TIME,
+            </if>
+            <if test="lastUpdate != null" >
+                LAST_UPDATE,
+            </if>
+            <if test="valid != null" >
+                VALID,
+            </if>
         </trim>
         <trim prefix="values (" suffix=")" suffixOverrides="," >
             <if test="id != null" >
                 #{id,jdbcType=DECIMAL},
             </if>
-            <if test="code != null" >
-                #{code,jdbcType=VARCHAR},
+            <if test="bid != null" >
+                #{bid,jdbcType=VARCHAR},
             </if>
             <if test="dictType != null" >
                 #{dictType,jdbcType=VARCHAR},
@@ -84,13 +99,22 @@
             <if test="relationDict != null" >
                 #{relationDict,jdbcType=VARCHAR},
             </if>
+            <if test="writeTime != null" >
+                #{writeTime,jdbcType=TIMESTAMP},
+            </if>
+            <if test="lastUpdate != null" >
+                #{lastUpdate,jdbcType=TIMESTAMP},
+            </if>
+            <if test="valid != null" >
+                #{valid,jdbcType=CHAR},
+            </if>
         </trim>
     </insert>
     <update id="updateByPrimaryKeySelective" parameterType="com.dyplayer.hip.rim.type.ets.Dict" >
         update DICT
         <set >
-            <if test="code != null" >
-                CODE = #{code,jdbcType=VARCHAR},
+            <if test="bid != null" >
+                BID = #{bid,jdbcType=VARCHAR},
             </if>
             <if test="dictType != null" >
                 DICT_TYPE = #{dictType,jdbcType=VARCHAR},
@@ -107,17 +131,29 @@
             <if test="relationDict != null" >
                 RELATION_DICT = #{relationDict,jdbcType=VARCHAR},
             </if>
+            <if test="writeTime != null" >
+                WRITE_TIME = #{writeTime,jdbcType=TIMESTAMP},
+            </if>
+            <if test="lastUpdate != null" >
+                LAST_UPDATE = #{lastUpdate,jdbcType=TIMESTAMP},
+            </if>
+            <if test="valid != null" >
+                VALID = #{valid,jdbcType=CHAR},
+            </if>
         </set>
         where ID = #{id,jdbcType=DECIMAL}
     </update>
     <update id="updateByPrimaryKey" parameterType="com.dyplayer.hip.rim.type.ets.Dict" >
         update DICT
-        set CODE = #{code,jdbcType=VARCHAR},
+        set BID = #{bid,jdbcType=VARCHAR},
         DICT_TYPE = #{dictType,jdbcType=VARCHAR},
         DICT_NAME = #{dictName,jdbcType=VARCHAR},
         DICT_REMARK = #{dictRemark,jdbcType=VARCHAR},
         DICT_VERSION = #{dictVersion,jdbcType=VARCHAR},
-        RELATION_DICT = #{relationDict,jdbcType=VARCHAR}
+        RELATION_DICT = #{relationDict,jdbcType=VARCHAR},
+        WRITE_TIME = #{writeTime,jdbcType=TIMESTAMP},
+        LAST_UPDATE = #{lastUpdate,jdbcType=TIMESTAMP},
+        VALID = #{valid,jdbcType=CHAR}
         where ID = #{id,jdbcType=DECIMAL}
     </update>
 </mapper>
