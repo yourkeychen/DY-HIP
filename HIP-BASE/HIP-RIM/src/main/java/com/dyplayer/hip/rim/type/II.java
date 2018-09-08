@@ -14,9 +14,39 @@ import com.dyplayer.hip.rim.type.ets.CD;
  */
 public class II {
 
+    private Long actId;
+
+    private Long roleId;
+
+    private Long entityId;
+
     private CD type;
 
     private String value;
+
+    public Long getActId() {
+        return actId;
+    }
+
+    public void setActId(Long actId) {
+        this.actId = actId;
+    }
+
+    public Long getRoleId() {
+        return roleId;
+    }
+
+    public void setRoleId(Long roleId) {
+        this.roleId = roleId;
+    }
+
+    public Long getEntityId() {
+        return entityId;
+    }
+
+    public void setEntityId(Long entityId) {
+        this.entityId = entityId;
+    }
 
     public CD getType() {
         return type;

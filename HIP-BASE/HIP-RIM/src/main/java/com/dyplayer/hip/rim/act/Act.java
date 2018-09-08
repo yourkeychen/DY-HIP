@@ -5,9 +5,7 @@
  */
 package com.dyplayer.hip.rim.act;
 
-import com.dyplayer.hip.rim.type.II;
 import java.util.Date;
-import java.util.List;
 
 /**
  *
@@ -15,10 +13,6 @@ import java.util.List;
  */
 public class Act {
 
-    /**
-     * 业务ID（身份证号、员工号、申请单号、出库单号...）
-     */
-    private List<II> bId;
     /**
      * 业务编码
      */
@@ -99,14 +93,6 @@ public class Act {
      * 原因编码
      */
     private String reasonCode;
-
-    public List<II> getbId() {
-        return bId;
-    }
-
-    public void setbId(List<II> bId) {
-        this.bId = bId;
-    }
 
     public String getCode() {
         return code;
@@ -268,5 +254,4 @@ public class Act {
         this.reasonCode = reasonCode;
     }
 
-    
 }

@@ -22,6 +22,10 @@ public class ActHeir extends InfrastructureRoot {
      * 模型类型
      */
     private String moodCode;
+    /**
+     * 机构（管理组织不同）
+     */
+    private String institutionCode;
 
     public String getClassCode() {
         return classCode;
@@ -37,6 +41,14 @@ public class ActHeir extends InfrastructureRoot {
 
     public void setMoodCode(String moodCode) {
         this.moodCode = moodCode;
+    }
+
+    public String getInstitutionCode() {
+        return institutionCode;
+    }
+
+    public void setInstitutionCode(String institutionCode) {
+        this.institutionCode = institutionCode;
     }
 
 }
