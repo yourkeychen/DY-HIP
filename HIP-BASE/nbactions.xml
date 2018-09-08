@@ -10,4 +10,14 @@
                 <skipTests>true</skipTests>
             </properties>
         </action>
+        <action>
+            <actionName>CUSTOM-deploy</actionName>
+            <displayName>deploy</displayName>
+            <goals>
+                <goal>deploy</goal>
+            </goals>
+            <properties>
+                <skipTests>true</skipTests>
+            </properties>
+        </action>
     </actions>

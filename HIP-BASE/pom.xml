@@ -14,9 +14,9 @@
     </modules>
     <repositories>
         <repository>
-            <id>nexus-aliyun</id>
-            <name>Nexus aliyun</name>
-            <url>http://maven.aliyun.com/nexus/content/groups/public</url>
+            <id>localhost-public</id>
+            <name>localhost-public</name>
+            <url>http://localhost:8481/repository/maven-public/</url>
             <layout>default</layout>
             <releases>
                 <enabled>true</enabled>
@@ -26,6 +26,13 @@
             </snapshots>
         </repository>
     </repositories>
+    <distributionManagement>
+        <snapshotRepository>
+            <id>localhost-snapshots</id>
+            <name>localhost-snapshots</name> 
+            <url>http://localhost:8481/repository/maven-snapshots/</url>
+        </snapshotRepository>
+    </distributionManagement>
     <dependencies>
         <dependency>
             <groupId>junit</groupId>
