@@ -3,6 +3,7 @@ package com.dyplayer.hip.dao.ets;
 import com.dyplayer.hip.rim.type.ets.Dict;
 
 public interface DictMapper {
+    
     int deleteByPrimaryKey(Long id);
 
     int insert(Dict record);
