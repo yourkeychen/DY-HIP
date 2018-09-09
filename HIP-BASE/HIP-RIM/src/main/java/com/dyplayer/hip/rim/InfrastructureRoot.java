@@ -44,11 +44,11 @@ public class InfrastructureRoot {
         this.id = id;
     }
 
-    public String getbId() {
+    public String getBid() {
         return bId;
     }
 
-    public void setbId(String bId) {
+    public void setBid(String bId) {
         this.bId = bId;
     }
 

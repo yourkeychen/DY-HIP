@@ -13,7 +13,7 @@ import java.util.Date;
  * @author duyi
  */
 public class Participation extends InfrastructureRoot {
-
+    
     private String typeCode;
 
     private Long functionCode;
@@ -42,5 +42,5 @@ public class Participation extends InfrastructureRoot {
 
     private Long subsetCode;
 
-    private Long quantity;
+    private Integer quantity;
 }
