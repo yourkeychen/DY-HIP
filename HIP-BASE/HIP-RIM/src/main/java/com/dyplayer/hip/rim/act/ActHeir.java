@@ -15,6 +15,10 @@ import com.dyplayer.hip.rim.InfrastructureRoot;
 public class ActHeir extends InfrastructureRoot {
 
     /**
+     * 编码
+     */
+    private String code;
+    /**
      * 数据类型
      */
     private String classCode;
@@ -23,32 +27,13 @@ public class ActHeir extends InfrastructureRoot {
      */
     private String moodCode;
     /**
+     * 状态
+     */
+    private String statusCode;
+    /**
      * 机构（管理组织不同）
      */
     private String institutionCode;
 
-    public String getClassCode() {
-        return classCode;
-    }
-
-    public void setClassCode(String classCode) {
-        this.classCode = classCode;
-    }
-
-    public String getMoodCode() {
-        return moodCode;
-    }
-
-    public void setMoodCode(String moodCode) {
-        this.moodCode = moodCode;
-    }
-
-    public String getInstitutionCode() {
-        return institutionCode;
-    }
-
-    public void setInstitutionCode(String institutionCode) {
-        this.institutionCode = institutionCode;
-    }
 
 }

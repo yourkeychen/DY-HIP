@@ -5,10 +5,18 @@
  */
 package com.dyplayer.hip.rim.entity;
 
+import java.util.Date;
+
 /**
  *
  * @author duyi
  */
-public class Entity {
-
+public class Entity extends EntityHeir{
+    private Long determinerCode;
+    private Double quantity;
+    private String name;
+    private String desc;
+    private Date existenceTimeLow;
+    private Date existenceTimeHigh;
+    private String telecom;
 }

@@ -14,28 +14,21 @@ import com.dyplayer.hip.rim.InfrastructureRoot;
 public class RoleHeir extends InfrastructureRoot {
 
     /**
+     * 编码
+     */
+    private String code;
+    /**
      * 数据类型
      */
     private String classCode;
+    /**
+     * 状态
+     */
+    private String statusCode;
     /**
      * 机构（管理组织不同）
      */
     private String institutionCode;
 
-    public String getClassCode() {
-        return classCode;
-    }
 
-    public void setClassCode(String classCode) {
-        this.classCode = classCode;
-    }
-
-    public String getInstitutionCode() {
-        return institutionCode;
-    }
-
-    public void setInstitutionCode(String institutionCode) {
-        this.institutionCode = institutionCode;
-    }
-    
 }

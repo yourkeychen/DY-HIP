@@ -11,20 +11,16 @@ import java.util.Date;
  *
  * @author duyi
  */
-public class Act {
+public class Act extends ActHeir {
 
-    /**
-     * 业务编码
-     */
-    private String code;
     /**
      * 是否是逆操作（退费、退药）
      */
-    private String actionNegationind;
+    private String actionNegationlnd;
     /**
      * 是否可逆
      */
-    private String negationind;
+    private String negationlnd;
     /**
      * 来源说明
      */
@@ -37,10 +33,6 @@ public class Act {
      * 文本内容
      */
     private String text;
-    /**
-     * 业务数据状态
-     */
-    private String statusCode;
     /**
      * 有效开始时间
      */
@@ -64,11 +56,11 @@ public class Act {
     /**
      * 优先级别
      */
-    private String priorityCode;
+    private Long priorityCode;
     /**
      * 保密级别
      */
-    private String confidentialityCode;
+    private Long confidentialityCode;
     /**
      * 重复次数（住院次数）
      */
@@ -80,7 +72,7 @@ public class Act {
     /**
      * 级别编码
      */
-    private String levelCode;
+    private Long levelCode;
     /**
      * 是否独立
      */
@@ -88,34 +80,26 @@ public class Act {
     /**
      * 不确定码
      */
-    private String uncertaintyCode;
+    private Long uncertaintyCode;
     /**
      * 原因编码
      */
-    private String reasonCode;
+    private Long reasonCode;
 
-    public String getCode() {
-        return code;
+    public String getActionNegationlnd() {
+        return actionNegationlnd;
     }
 
-    public void setCode(String code) {
-        this.code = code;
+    public void setActionNegationlnd(String actionNegationlnd) {
+        this.actionNegationlnd = actionNegationlnd;
     }
 
-    public String getActionNegationind() {
-        return actionNegationind;
+    public String getNegationlnd() {
+        return negationlnd;
     }
 
-    public void setActionNegationind(String actionNegationind) {
-        this.actionNegationind = actionNegationind;
-    }
-
-    public String getNegationind() {
-        return negationind;
-    }
-
-    public void setNegationind(String negationind) {
-        this.negationind = negationind;
+    public void setNegationlnd(String negationlnd) {
+        this.negationlnd = negationlnd;
     }
 
     public String getDerivationExpr() {
@@ -140,14 +124,6 @@ public class Act {
 
     public void setText(String text) {
         this.text = text;
-    }
-
-    public String getStatusCode() {
-        return statusCode;
-    }
-
-    public void setStatusCode(String statusCode) {
-        this.statusCode = statusCode;
     }
 
     public Date getEffectiveTimeLow() {
@@ -190,19 +166,19 @@ public class Act {
         this.availabilityTime = availabilityTime;
     }
 
-    public String getPriorityCode() {
+    public Long getPriorityCode() {
         return priorityCode;
     }
 
-    public void setPriorityCode(String priorityCode) {
+    public void setPriorityCode(Long priorityCode) {
         this.priorityCode = priorityCode;
     }
 
-    public String getConfidentialityCode() {
+    public Long getConfidentialityCode() {
         return confidentialityCode;
     }
 
-    public void setConfidentialityCode(String confidentialityCode) {
+    public void setConfidentialityCode(Long confidentialityCode) {
         this.confidentialityCode = confidentialityCode;
     }
 
@@ -222,11 +198,11 @@ public class Act {
         this.interruptiblelnd = interruptiblelnd;
     }
 
-    public String getLevelCode() {
+    public Long getLevelCode() {
         return levelCode;
     }
 
-    public void setLevelCode(String levelCode) {
+    public void setLevelCode(Long levelCode) {
         this.levelCode = levelCode;
     }
 
@@ -238,19 +214,19 @@ public class Act {
         this.independentlnd = independentlnd;
     }
 
-    public String getUncertaintyCode() {
+    public Long getUncertaintyCode() {
         return uncertaintyCode;
     }
 
-    public void setUncertaintyCode(String uncertaintyCode) {
+    public void setUncertaintyCode(Long uncertaintyCode) {
         this.uncertaintyCode = uncertaintyCode;
     }
 
-    public String getReasonCode() {
+    public Long getReasonCode() {
         return reasonCode;
     }
 
-    public void setReasonCode(String reasonCode) {
+    public void setReasonCode(Long reasonCode) {
         this.reasonCode = reasonCode;
     }
 
